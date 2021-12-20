@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Hangman!</title>
+</head>
+<body>
+<h1>Thanks for playing my game! </h1>
+
+
+<script>
+
+
+
+
+
+
+// noprotect
+window.alert ("In this game, you have to guess a word.")
+window.alert ("Every underscore “_” is the same as a letter.")
+window.alert ("The words are: coding, school, lua, roblox.")
+window.alert ("Good Luck!")
+var words = [
+  "coding",
+  "school",
+  "lua",
+  "roblox",
+];
+
+
+var word = words[Math.floor(Math.random() * words.length)];
+
+
+var answerArray = [];
+
+
+
+
+for (var i = 0; i < word.length; i++) {
+     answerArray[i] = "_ ";
+     }
+
+
+var remainingLetters = word.length;
+
+
+while (remainingLetters > 0){
+  alert(answerArray.join(""));
+  var guess = prompt("Guess a letter");
+  if (guess === null) {
+    break; 
+  } else if (guess.length !== 1){
+    alert("Please enter a single letter");
+  } else{
+    
+    for (var j = 0; j < word.length; j++){
+      if (word[j] === guess) {
+        answerArray[j] = guess;
+        remainingLetters--;
+     }
+    }
+    
+  }
+  
+}
+
+
+
+
+
+
+
+
+     </script>
+</body>
+</html>
